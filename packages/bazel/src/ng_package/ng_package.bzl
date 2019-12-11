@@ -281,7 +281,7 @@ def _run_rollup(ctx, bundle_name, rollup_config, entry_point, inputs, js_output,
 
     # We will produce errors as needed. Anything else is spammy: a well-behaved
     # bazel rule prints nothing on success.
-    args.add("--silent")
+    #args.add("--silent")
 
     other_inputs = [rollup_config]
     if ctx.file.license_banner:
@@ -640,7 +640,7 @@ _NG_PACKAGE_ATTRS = dict(NPM_PACKAGE_ATTRS, **{
     "entry_point": attr.label(
         doc = """The starting point of the application, passed as the `--input` flag to rollup.
 
-        If the entry JavaScript file belongs to the same package (as the BUILD file), 
+        If the entry JavaScript file belongs to the same package (as the BUILD file),
         you can simply reference it by its relative name to the package directory:
 
         ```
@@ -668,7 +668,7 @@ _NG_PACKAGE_ATTRS = dict(NPM_PACKAGE_ATTRS, **{
 
         The rule will use the corresponding `.js` output of the ts_library rule as the entry point.
 
-        If the entry point target is a rule, it should produce a single JavaScript entry file that will be passed to the nodejs_binary rule. 
+        If the entry point target is a rule, it should produce a single JavaScript entry file that will be passed to the nodejs_binary rule.
         For example:
 
         ```
